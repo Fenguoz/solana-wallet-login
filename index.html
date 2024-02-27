@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Using PHP to Complete Solana Wallet User Login</title>
+		<meta name="description" content="Using PHP to Complete Solana Wallet User Login">
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+
+	<body>
+
+		<div style="margin: 0 auto;max-width: 600px;margin-top:100px;">
+
+			<div style="text-align:center;word-wrap:break-word;">
+				<span style="font-size:19px;">
+					<b>Using PHP to Complete Solana Wallet User Login</b>
+				</span>
+				<div style="height:5px;"></div>
+
+				<a href="https://github.com/giekaton/php-metamask-user-login" target="_blank" style="font-size:15px;">GitHub</a>
+
+				<div style="height:20px;"></div>
+
+				<div id="loggedOut" class="user-login-msg">
+					Click the button to (sign up and) login!
+				</div>
+				<div id="needMetamask" style="display:none;color: rgb(255, 115, 0);" class="user-login-msg">
+					To login, first install a Web3 wallet like the <a href="https://phantom.app/" style="color:#ff7300" target="_blank">Phantom</a> browser extension or mobile app
+				</div>
+				<div id="needLogInToMetaMask" style="display:none;color: rgb(255, 115, 0);" class="user-login-msg">
+					Log in to your wallet account first!
+				</div>
+				<div id="signTheMessage" style="display:none;" class="user-login-msg">
+					Sign the message with your wallet to authenticate
+				</div>
+				<div id="loggedIn" style="display:none;" class="user-login-msg">
+					Successful authentication for address:<br><span id="ethAddress"></span>
+					<br><br>
+					You can set a public name for this account:<br>
+					<input type="text" placeholder="Public name" id="updatePublicName" onfocusout="setPublicName()" style="width:190px;">
+				</div>
+				<br>
+				<button onclick="userLoginOut()" id="buttonText" style="width:100px;height:26px;">Log in</button>
+				
+				<div style="height:40px;"></div>
+			</div>
+
+		</div>
+
+		<script>
+			// If this package is in a subfolder, define the backend path
+			// backendPath = "php-metamask-user-login/";
+		</script>
+		<script src="frontend/bs58.js"></script>
+		<script src="frontend/web3-login.js?1.0.4"></script>
+
+	</body>
+
+</html>
